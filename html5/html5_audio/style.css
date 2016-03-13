@@ -1,0 +1,330 @@
+@-webkit-keyframes heartbeat
+{
+	0%
+	{
+		transform: scale(1);
+	}
+	10%
+	{
+		transform: scale(1.2);
+	}
+	50%
+	{
+		transform: scale(1);
+	}
+}
+
+@-moz-keyframes heartbeat
+{
+	0%
+	{
+		transform: scale(1);
+	}
+	10%
+	{
+		transform: scale(1.2);
+	}
+	50%
+	{
+		transform: scale(1);
+	}
+}
+
+@-o-keyframes heartbeat
+{
+	0%
+	{
+		transform: scale(1);
+	}
+	10%
+	{
+		transform: scale(1.2);
+	}
+	50%
+	{
+		transform: scale(1);
+	}
+}
+
+@keyframes heartbeat
+{
+	0%
+	{
+		transform: scale(1);
+	}
+	10%
+	{
+		transform: scale(1.2);
+	}
+	50%
+	{
+		transform: scale(1);
+	}
+}
+
+*
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+}
+
+html, body
+{
+	background-color: #EEEEEE;
+}
+
+html, body, #chooser, #scene
+{
+	min-height: 630px;
+	width: 100%;
+	height: 100%;
+}
+
+svg#heart
+{
+	margin: 0 0 -2px 0;
+}
+
+svg#heart path#heartShape
+{
+	-webkit-animation-duration: 1s;
+	-webkit-animation-name: heartbeat;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-duration: 1s;
+	-moz-animation-name: heartbeat;
+	-moz-animation-iteration-count: infinite;
+	-o-animation-duration: 1s;
+	-o-animation-name: heartbeat;
+	-o-animation-iteration-count: infinite;
+	animation-duration: 1s;
+	animation-name: heartbeat;
+	animation-iteration-count: infinite;
+	-webkit-transform-origin: center center;
+	-moz-transform-origin: center center;
+	-o-transform-origin: center center;
+	transform-origin: center center;
+	fill: #FF6688;
+}
+
+#footer
+{
+	z-index: 1;
+	position: absolute;
+	text-align: center;
+	width: 300px;
+	font-size: 13px;
+	color: #AAAAAA;
+	bottom: 10px;
+	left: 50%;
+	margin-left: -150px;
+}
+
+#footer a
+{
+	font-size: 13px;
+	color: #AAAAAA;
+}
+
+#footer a:hover
+{
+	color: #4285F4;
+}
+
+#chooser, #scene
+{
+	position: absolute;
+	transition: opacity 1s ease, visibility 1s ease;
+	opacity: 1;
+	visibility: visible;
+}
+
+#chooser.hidden, #scene.hidden
+{
+	opacity: 0;
+	visibility: hidden;
+}
+
+#chooser #chooser-dialog
+{
+	position: absolute;
+	overflow: hidden;
+	width: 400px;
+	height: 190px;
+	top: 50%;
+	left: 50%;
+	margin-top: -95px;
+	margin-left: -200px;
+	background-color: #FFFFFF;
+	border-radius: 3px;
+	padding: 20px 20px 0 20px;
+	box-sizing: border-box;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+	/*box-shadow: 0 17px 17px 0 rgba(0, 0, 0, 0.15), 0 27px 55px 0 rgba(0, 0, 0, 0.3);*/
+}
+
+#chooser h1
+{
+	color: #444444;
+	position: absolute;
+	width: 400px;
+	height: 30px;
+	top: 50%;
+	left: 50%;
+	margin-top: -150px;
+	margin-left: -200px;
+	font-size: 23px;
+	font-weight: 300;
+	text-align: center;
+}
+
+#chooser #chooser-dialog h2
+{
+	margin: 0 0 15px 0;
+	font-size: 23px;
+	font-weight: 500;
+}
+
+#chooser #chooser-dialog input
+{
+	display: block;
+	height: 30px;
+	font-family: 'Roboto', sans-serif;
+}
+
+#chooser #chooser-dialog p
+{
+	height: 50px;
+	color: #888888;
+	font-size: 14px;
+}
+
+#chooser #chooser-dialog button
+{
+	outline: none;
+	display: block;
+	border: none;
+	background-color: transparent;
+	padding: 10px 20px 16px 20px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	width: 140px;
+	box-sizing: border-box;
+	margin-left: 240px;
+	color: #4285F4;
+	background-color: #FFFFFF;
+	cursor: pointer;
+	transition: background-color 0.14s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#chooser #chooser-dialog button:active
+{
+	background-color: #EEEEEE;
+}
+
+#chooser #chooser-dialog button.disabled
+{
+	background-color: #FFFFFF;
+	cursor: default;
+	color: #CCCCCC;
+}
+
+#scene #scene-canvas
+{
+	position: absolute;
+	width: 600px;
+	height: 600px;
+	top: 50%;
+	left: 50%;
+	margin-top: -300px;
+	margin-left: -300px;
+	/*outline: 1px dashed #CCCCCC;*/
+}
+
+#error
+{
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.25);
+	transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+	opacity: 1;
+	visibility: visible;
+}
+
+#error #error-dialog
+{
+	position: absolute;
+	overflow: hidden;
+	width: 300px;
+	height: 150px;
+	top: 50%;
+	left: 50%;
+	margin-top: -75px;
+	margin-left: -150px;
+	background-color: #FFFFFF;
+	border-radius: 3px;
+	padding: 20px 20px 0 20px;
+	box-sizing: border-box;
+	/*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.3);*/
+	box-shadow: 0 17px 17px 0 rgba(0, 0, 0, 0.15), 0 27px 55px 0 rgba(0, 0, 0, 0.3);
+	transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+	transform: translate(0, 0);
+}
+
+#error.hidden
+{
+	opacity: 0;
+	visibility: hidden;
+}
+
+#error.hidden #error-dialog
+{
+	transform: translate(0, -200px);
+}
+
+#error #error-dialog h1
+{
+	height: 30px;
+	margin: 0 0 15px 0;
+	font-size: 23px;
+	font-weight: 500;
+}
+
+#error #error-dialog p
+{
+	height: 40px;
+	color: #666666;
+	font-size: 15px;
+}
+
+#error #error-dialog button
+{
+	outline: none;
+	display: block;
+	border: none;
+	background-color: transparent;
+	padding: 10px 20px 16px 20px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	width: 80px;
+	box-sizing: border-box;
+	margin-left: 186px;
+	color: #4285F4;
+	background-color: #FFFFFF;
+	cursor: pointer;
+	transition: background-color 0.14s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#error #error-dialog button:active
+{
+	background-color: #EEEEEE;
+}
