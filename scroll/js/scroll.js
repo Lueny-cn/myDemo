@@ -37,16 +37,15 @@
         var o = data.obj, tag = data.tag, url = data.url, post, posb;
 
         if (o) {
-          post = o.offset().top - contop,
-          posb = post + o.height();
+          post = o.offset().top - contop,  //容器向下滚动时 图片顶部 与 可视区域底部 的 距离
+          posb = post + o.height();        //容器向上滚动时 图片底部 与 可视区域顶部 的 距离
 
-          if (o.is(':visible') && (post >= 0 && post < contHeight) || (posb > 0 && posb <= contHeight)) {
+          if ( (post >= 0 && post < contHeight) || (posb > 0 && posb <= contHeight)) {
             if (url) {
               //在浏览器窗口内
               if (tag === "div") {
                 //图片，改变src
-                // callback(o.attr("src", url));
-                callback(o.css("background", "url("+ url +")"));
+                callback(o.css("background", "url("+ url +") no-repeat"));
                 callback(o.css("background-size", "100%"));
               } else {
                 o.load(url, {}, function() {
