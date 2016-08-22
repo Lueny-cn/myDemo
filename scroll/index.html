@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>懒加载</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="item" data-url="images/pic1.jpg"></div>
+        <div class="item" data-url="images/pic2.jpg"></div>
+        <div class="item" data-url="images/pic3.jpg"></div>
+        <div class="item" data-url="images/pic4.jpg"></div>
+        <div class="item" data-url="images/pic5.jpg"></div>
+        <div class="item" data-url="images/pic6.jpg"></div>
+        <div class="item" data-url="images/pic7.jpg"></div>
+        <div class="item" data-url="images/pic8.jpg"></div>
+        <div class="item" data-url="images/pic9.jpg"></div>
+        <div class="item" data-url="images/pic10.jpg"></div>
+        <div class="item" data-url="images/pic11.jpg"></div>
+        <div class="item" data-url="images/pic12.jpg"></div>
+        <div class="item" data-url="images/pic13.jpg"></div>
+        <div class="item" data-url="images/pic14.jpg"></div>
+        <div class="item" data-url="images/pic15.jpg"></div>
+        <div class="item" data-url="images/pic16.jpg"></div>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+<script>
+    $('.item').scrollLoading({
+        callback: function() {
+            this.style.border = "1px solid #DDD";
+            this.style.borderRadius = "3px";
+        }
+    });
+</script>
+</html>
