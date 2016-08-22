@@ -1,0 +1,20 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #EEE;
+}
+.container {
+  width: 960px;
+  margin:10px auto;
+  background: #FFF;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+}
+
+.item {
+  width: 80%;
+  height: 400px;
+  margin: 8px auto;
+  background: url('../images/pic0.jpg');
+  background-size: 100%;
+}
