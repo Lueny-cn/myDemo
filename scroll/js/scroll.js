@@ -37,14 +37,17 @@
         var o = data.obj, tag = data.tag, url = data.url, post, posb;
 
         if (o) {
-          post = o.offset().top - contop, post + o.height();
+          post = o.offset().top - contop,
+          posb = post + o.height();
 
           if (o.is(':visible') && (post >= 0 && post < contHeight) || (posb > 0 && posb <= contHeight)) {
             if (url) {
               //在浏览器窗口内
-              if (tag === "img") {
+              if (tag === "div") {
                 //图片，改变src
-                callback(o.attr("src", url));
+                // callback(o.attr("src", url));
+                callback(o.css("background", "url("+ url +")"));
+                callback(o.css("background-size", "100%"));
               } else {
                 o.load(url, {}, function() {
                   callback(o);
@@ -57,6 +60,7 @@
             data.obj = null;
           }
         }
+
       });
     };
 
