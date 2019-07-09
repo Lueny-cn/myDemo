@@ -44,9 +44,12 @@
             if (url) {
               //在浏览器窗口内
               if (tag === "div") {
-                //图片，改变src
-                callback(o.css("background", "url("+ url +") no-repeat"));
-                callback(o.css("background-size", "100%"));
+                //url 加载完（存在浏览器内存）再替换图片
+                $('<img/>').attr('src', url).load(function() {
+                  $(this).remove(); // prevent memory leaks as @benweet suggested
+                  callback(o.css("background", "url("+ url +") no-repeat"));
+                  callback(o.css("background-size", "100%"));
+                });
               } else {
                 o.load(url, {}, function() {
                   callback(o);

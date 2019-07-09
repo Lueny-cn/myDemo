@@ -1,0 +1,70 @@
+@import "./reset";
+@import "./func";
+
+.lucky-draw {
+  font-size: 28px;
+}
+
+.panel-area {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  margin: 20px auto;
+  background: url("../assets/LuckyDraw/lottery_bg.png");
+  background-size: 100% auto;
+  opacity: 0.5;
+
+  .btn-lottery {
+    @include ab_l_t(156px, 150px);
+    display: inline-block;
+    @include bg("../assets/LuckyDraw/i_arrow.png", 77px, 90px);
+    cursor: pointer;
+    transition: transform 1.5s ease;
+  }
+}
+
+.lottery-list {
+  li {
+    position: absolute;
+
+    &:nth-child(1) {
+      top: 70px;
+      right: 140px;
+    }
+
+    &:nth-child(2) {
+      top: 130px;
+      right: 80px;
+    }
+
+    &:nth-child(3) {
+      top: 220px;
+      right: 80px;
+    }
+
+    &:nth-child(4) {
+      top: 280px;
+      right: 140px;
+    }
+
+    &:nth-child(5) {
+      top: 280px;
+      left: 140px;
+    }
+
+    &:nth-child(6) {
+      top: 220px;
+      left: 80px;
+    }
+
+    &:nth-child(7) {
+      top: 130px;
+      left: 80px;
+    }
+
+    &:nth-child(8) {
+      top: 70px;
+      left: 140px;
+    }
+  }
+}
