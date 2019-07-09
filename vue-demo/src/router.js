@@ -14,6 +14,11 @@ export default new Router({
       component: LuckyDraw
     },
     {
+      path: '/menuCollapse',
+      name: 'MenuCollapse',
+      component: () => import(/* webpackChunkName: "MenuCollapse" */ './views/MenuCollapse.vue')
+    },
+    {
       path: '/other',
       name: 'other',
       // route level code-splitting

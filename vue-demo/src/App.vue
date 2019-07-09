@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">圆盘</router-link> |
-      <router-link to="/other">other</router-link>
+      <router-link to="/other">other</router-link>|
+      <router-link to="/menuCollapse">menuCollapse</router-link>
     </div>
     <router-view/>
   </div>
