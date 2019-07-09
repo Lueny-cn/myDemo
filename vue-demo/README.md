@@ -1,4 +1,4 @@
-# lucky-draw
+# Vue-demo
 
 ## Project setup
 ```
