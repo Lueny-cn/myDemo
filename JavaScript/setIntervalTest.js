@@ -1,4 +1,4 @@
-// get setInterval delay in chrome
+// get setInterval delay in chrome, if tab of run this script is not active, will get amazing delayTime
 function getIntervalDelay(countTime = 10, wait = 500) {
   let now = Date.now()
   let count = countTime
